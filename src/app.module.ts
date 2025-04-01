@@ -12,13 +12,9 @@ import { SeedModule } from './seed/seed.module';
       rootPath: join(__dirname, '..', 'public'),
       renderPath: '/'
     }),
-
     MongooseModule.forRoot('mongodb://localhost:27017/nest-pokemon'),
-
     PokemonModule,
-
     CommonModule,
-
     SeedModule,
   ],
   

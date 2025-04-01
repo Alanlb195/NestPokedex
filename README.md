@@ -57,6 +57,13 @@ npm run start:dev
 ### 3. Test the API
 Once the server is running, you can test the API endpoints using tools like **Postman**, **cURL**, or directly in your browser.
 
+### 4. Seed data
+Execute a get with this url to run the seed
+
+```sh
+localhost:3000/api/v2/seed
+```
+
 By default, the API runs on `http://localhost:3000/api/v2`.
 
 ## Tech Stack
