@@ -6,9 +6,14 @@
 
 ## About the project
 
-This is a RESTful API built using [NestJS](https://nestjs.com/), inspired by the structure of the [PokeAPI](https://pokeapi.co/). The project follows NestJS best practices, including the use of controllers, services, DTOs, and pipes. It connects to a **MongoDB** database, which runs inside a **Docker** container managed through a `docker-compose` file.
+This is a RESTful API built using [NestJS](https://nestjs.com/), inspired by the
+structure of the [PokeAPI](https://pokeapi.co/). The project follows NestJS best
+practices, including the use of controllers, services, DTOs, and pipes. It
+connects to a **MongoDB** database, which runs inside a **Docker** container
+managed through a `docker-compose` file.
 
 ## Features
+
 - RESTful API structure
 - **NestJS** controllers, services, DTOs, and pipes
 - **MongoDB** database integration
@@ -16,11 +21,13 @@ This is a RESTful API built using [NestJS](https://nestjs.com/), inspired by the
 - CRUD endpoints for managing data
 
 ## Prerequisites
+
 Before running the project, make sure you have the following installed:
 
 - **[Node.js](https://nodejs.org/)** (Recommended version: latest LTS)
 - **[Docker](https://www.docker.com/)** (For MongoDB database)
-- **[Nest CLI](https://docs.nestjs.com/cli/overview)** (Globally installed CLI for NestJS)
+- **[Nest CLI](https://docs.nestjs.com/cli/overview)** (Globally installed CLI
+  for NestJS)
 
 ```sh
 npm install -g @nestjs/cli
@@ -39,6 +46,7 @@ npm install
 ## Running the project
 
 ### 1. Start the MongoDB database
+
 Run the following command to start the MongoDB container using Docker:
 
 ```sh
@@ -48,6 +56,7 @@ docker-compose up -d
 This will start the database in detached mode (`-d`), running in the background.
 
 ### 2. Start the NestJS server
+
 Run the following command to start the development server:
 
 ```sh
@@ -55,19 +64,29 @@ npm run start:dev
 ```
 
 ### 3. Test the API
-Once the server is running, you can test the API endpoints using tools like **Postman**, **cURL**, or directly in your browser.
+
+Once the server is running, you can test the API endpoints using tools like
+**Postman**, **cURL**, or directly in your browser.
 
 ### 4. Seed data
+
 Execute a get with this url to run the seed
 
 ```sh
 localhost:3000/api/v2/seed
 ```
 
+### 5. Configure ENV Variables
+
+Clone the file `.env.template` and change the name to `.env` and configure
+variables
+
+### 6. API URL
+
 By default, the API runs on `http://localhost:3000/api/v2`.
 
 ## Tech Stack
+
 - **NestJS** - Framework for scalable Node.js applications
 - **MongoDB** - NoSQL database
 - **Docker** - Containerized database environment
-
