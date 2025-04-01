@@ -43,9 +43,14 @@ cd NestPokedex
 npm install
 ```
 
-## Running the project
+## Running the project in development env
 
-### 1. Start the MongoDB database
+### 1. Configure ENV Variables
+
+Clone the file `.env.template` and change the name to `.env` and configure
+variables
+
+### 2. Start the MongoDB database
 
 Run the following command to start the MongoDB container using Docker:
 
@@ -55,20 +60,7 @@ docker-compose up -d
 
 This will start the database in detached mode (`-d`), running in the background.
 
-### 2. Start the NestJS server
-
-Run the following command to start the development server:
-
-```sh
-npm run start:dev
-```
-
-### 3. Test the API
-
-Once the server is running, you can test the API endpoints using tools like
-**Postman**, **cURL**, or directly in your browser.
-
-### 4. Seed data
+### 3. Seed data
 
 Execute a get with this url to run the seed
 
@@ -76,14 +68,48 @@ Execute a get with this url to run the seed
 localhost:3000/api/v2/seed
 ```
 
-### 5. Configure ENV Variables
+### 3. Start the NestJS server
 
-Clone the file `.env.template` and change the name to `.env` and configure
-variables
+Run the following command to start the development server:
+
+```sh
+npm run start:dev
+```
+
+### 4. Test the API
+
+Once the server is running, you can test the API endpoints using tools like
+**Postman**, **cURL**, or directly in your browser.
 
 ### 6. API URL
 
 By default, the API runs on `http://localhost:3000/api/v2`.
+
+
+## Running the project in prod env (dockerized app with nest and mongo)
+
+### 1. Configure ENV Variables
+
+Clone the file `.env.template` and change the name to `.env.prod` and configure
+variables, just uncomment and use the second option in the env.template file
+
+### 2. Start the MongoDB database and the NestJS Application
+
+To build and run the production-ready application inside a Docker container, execute:
+
+```sh
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
+To run it in detached mode:
+
+
+```sh
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up -d
+```
+
+Once the server is running, you can test the API endpoints using tools like
+**Postman**, **cURL**, or directly in your browser.
 
 ## Tech Stack
 
